@@ -53,7 +53,6 @@ defmodule BlockScoutWeb.Chain do
   }
 
   alias Explorer.Chain.Cache.BlockNumber
-  alias Explorer.Chain.Optimism.Deposit, as: OptimismDeposit
   alias Explorer.Chain.Optimism.FrameSequence, as: OptimismFrameSequence
   alias Explorer.Chain.Optimism.InteropMessage, as: OptimismInteropMessage
   alias Explorer.Chain.Optimism.OutputRoot, as: OptimismOutputRoot
@@ -1029,10 +1028,6 @@ defmodule BlockScoutWeb.Chain do
     %{smart_contract_id: smart_contract.id}
   end
 
-  defp paging_params(%OptimismDeposit{l1_block_number: l1_block_number, l2_transaction_hash: l2_transaction_hash}) do
-    %{"l1_block_number" => l1_block_number, "transaction_hash" => l2_transaction_hash}
-  end
-
   defp paging_params(%OptimismOutputRoot{l2_output_index: index}) do
     %{"index" => index}
   end
@@ -1087,6 +1082,11 @@ defmodule BlockScoutWeb.Chain do
   # clause for Polygon Edge Deposits and Withdrawals
   defp paging_params(%{msg_id: msg_id}) do
     %{"id" => msg_id}
+  end
+
+  # clause for Optimism Deposits
+  defp paging_params(%{l1_block_number: l1_block_number, l2_transaction_hash: l2_transaction_hash}) do
+    %{"l1_block_number" => l1_block_number, "transaction_hash" => l2_transaction_hash}
   end
 
   # clause for Shibarium Deposits
