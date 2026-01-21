@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### 🚀 Features
+
+- Migrate nonce field from integer to bigint for millisecond-level timestamp support in transactions and addresses tables
+
 ## 9.3.2
 
 ### 🐛 Bug Fixes
