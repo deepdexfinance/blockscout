@@ -14,7 +14,7 @@ defmodule Indexer.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       lockfile: "../../mix.lock",
       start_permanent: Mix.env() == :prod,
-      version: "9.3.2-webskt-timing",
+      version: "9.3.2-pending-tx-oscillation",
       xref: [
         exclude: [
           Explorer.Chain.Optimism.Deposit,

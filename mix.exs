@@ -7,7 +7,7 @@ defmodule BlockScout.Mixfile do
     [
       # app: :block_scout,
       # aliases: aliases(config_env()),
-      version: "9.3.2-webskt-timing",
+      version: "9.3.2-pending-tx-oscillation",
       apps_path: "apps",
       deps: deps(),
       dialyzer: dialyzer(),

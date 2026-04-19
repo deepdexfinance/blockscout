@@ -71,7 +71,7 @@ end
 # will be used by default
 
 release :blockscout do
-  set version: "9.3.2-webskt-timing"
+  set version: "9.3.2-pending-tx-oscillation"
   set applications: [
     :runtime_tools,
     block_scout_web: :permanent,
