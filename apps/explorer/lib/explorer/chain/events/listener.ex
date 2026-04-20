@@ -80,6 +80,9 @@ defmodule Explorer.Chain.Events.Listener do
 
   defp listener_db_parameters do
     listener_db_url = Application.get_env(:explorer, EventNotificationsRepo)[:url]
-    ConfigHelper.extract_parameters(listener_db_url)
+
+    listener_db_url
+    |> ConfigHelper.extract_parameters()
+    |> Keyword.update(:password, nil, &URI.decode/1)
   end
 end
